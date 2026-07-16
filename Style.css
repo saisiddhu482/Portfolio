@@ -1,0 +1,237 @@
+/* ===== CSS Variables ===== */
+:root{
+  --primary:#2563eb;
+  --secondary:#1e40af;
+  --light:#ffffff;
+  --dark:#1f2937;
+  --gray:#f3f4f6;
+  --text:#333;
+  --shadow:0 4px 12px rgba(0,0,0,.15);
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  font-family:Arial,Helvetica,sans-serif;
+  background:var(--gray);
+  color:var(--text);
+  line-height:1.6;
+}
+
+/* ===== Navbar ===== */
+
+.navbar{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:18px 8%;
+  background:var(--primary);
+  color:#fff;
+  position:sticky;
+  top:0;
+}
+
+.logo{
+  font-size:28px;
+}
+
+.nav-links{
+  display:flex;
+  list-style:none;
+  gap:20px;
+}
+
+.nav-links a{
+  text-decoration:none;
+  color:#fff;
+  font-weight:bold;
+}
+
+.nav-links a:hover,
+.active{
+  color:#ffd700;
+}
+
+#theme-btn{
+  padding:8px 14px;
+  border:none;
+  border-radius:6px;
+  cursor:pointer;
+}
+
+/* ===== Hero ===== */
+
+.hero{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:40px;
+  padding:60px 8%;
+  align-items:center;
+}
+
+.hero img{
+  width:100%;
+  border-radius:12px;
+  box-shadow:var(--shadow);
+}
+
+.hero h2{
+  font-size:40px;
+  color:var(--primary);
+}
+
+.hero p{
+  margin:20px 0;
+}
+
+.btn{
+  display:inline-block;
+  padding:12px 25px;
+  background:var(--primary);
+  color:#fff;
+  text-decoration:none;
+  border-radius:8px;
+}
+
+.btn:hover{
+  background:var(--secondary);
+}
+
+/* ===== Sections ===== */
+
+section{
+  padding:50px 8%;
+}
+
+section h2{
+  text-align:center;
+  margin-bottom:30px;
+  color:var(--primary);
+}
+
+/* ===== Grid ===== */
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:25px;
+}
+
+/* ===== Cards ===== */
+
+.card{
+  background:#fff;
+  padding:25px;
+  border-radius:10px;
+  box-shadow:var(--shadow);
+  transition:.3s;
+}
+
+.card:hover{
+  transform:translateY(-8px);
+}
+
+/* ===== Contact Form ===== */
+
+form{
+  max-width:650px;
+  margin:auto;
+  display:flex;
+  flex-direction:column;
+  gap:15px;
+}
+
+input,
+textarea{
+  padding:12px;
+  border:1px solid #ccc;
+  border-radius:8px;
+  width:100%;
+}
+
+button{
+  padding:12px;
+  border:none;
+  background:var(--primary);
+  color:white;
+  border-radius:8px;
+  cursor:pointer;
+}
+
+button:hover{
+  background:var(--secondary);
+}
+
+/* ===== Footer ===== */
+
+footer{
+  text-align:center;
+  padding:20px;
+  background:var(--primary);
+  color:white;
+  margin-top:40px;
+}
+
+/* ===== Animations ===== */
+
+.card,
+.hero img,
+.btn{
+  transition:.3s;
+}
+
+.hero img:hover{
+  transform:scale(1.03);
+}
+
+/* ===== Responsive ===== */
+
+@media(max-width:768px){
+
+.hero{
+grid-template-columns:1fr;
+text-align:center;
+}
+
+.navbar{
+flex-direction:column;
+gap:15px;
+}
+
+.nav-links{
+flex-direction:column;
+text-align:center;
+}
+
+.logo{
+font-size:24px;
+}
+
+}
+
+/* ===== Dark Mode ===== */
+
+.dark-mode{
+background:#111827;
+color:white;
+}
+
+.dark-mode .card{
+background:#1f2937;
+color:white;
+}
+
+.dark-mode input,
+.dark-mode textarea{
+background:#374151;
+color:white;
+border:1px solid #555;
+}
+
+.dark-mode footer{
+background:#000;
+}
