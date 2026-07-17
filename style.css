@@ -1,1 +1,198 @@
-body{font-family:Arial;margin:0}header,footer{background:#0b5ed7;color:#fff;padding:15px}nav a{color:#fff;margin:8px}main{padding:20px}form{display:flex;flex-direction:column;max-width:400px;gap:10px}
+/* ===== CSS VARIABLES ===== */
+:root {
+    --primary: #2563eb;
+    --secondary: #1e293b;
+    --light: #ffffff;
+    --dark: #111827;
+    --gray: #f3f4f6;
+    --text: #333333;
+    --radius: 10px;
+    --shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial,sans-serif;
+    background:var(--gray);
+    color:var(--text);
+    line-height:1.6;
+}
+
+/* HEADER */
+header{
+    background:var(--primary);
+    color:var(--light);
+    text-align:center;
+    padding:20px;
+}
+
+/* NAVIGATION */
+nav{
+    background:var(--secondary);
+}
+
+nav ul{
+    display:flex;
+    justify-content:center;
+    list-style:none;
+    flex-wrap:wrap;
+}
+
+nav ul li{
+    margin:10px;
+}
+
+nav ul li a{
+    color:white;
+    text-decoration:none;
+    padding:10px 15px;
+    transition:.3s;
+}
+
+nav ul li a:hover{
+    background:var(--primary);
+    border-radius:5px;
+}
+
+/* MAIN CONTENT */
+main{
+    width:90%;
+    max-width:1200px;
+    margin:auto;
+    padding:30px 0;
+}
+
+/* GRID LAYOUT */
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+}
+
+/* CARD */
+.card{
+    background:white;
+    padding:20px;
+    border-radius:var(--radius);
+    box-shadow:var(--shadow);
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-5px);
+}
+
+/* ABOUT SECTION */
+.about{
+    display:flex;
+    gap:20px;
+    align-items:center;
+    flex-wrap:wrap;
+}
+
+.about img{
+    width:250px;
+    border-radius:50%;
+}
+
+.about div{
+    flex:1;
+}
+
+/* PROJECTS */
+.projects{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:20px;
+}
+
+/* CONTACT FORM */
+form{
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+}
+
+input,
+textarea{
+    padding:12px;
+    border:1px solid #ccc;
+    border-radius:6px;
+}
+
+button{
+    padding:12px;
+    background:var(--primary);
+    color:white;
+    border:none;
+    cursor:pointer;
+    border-radius:6px;
+    transition:.3s;
+}
+
+button:hover{
+    background:#1d4ed8;
+}
+
+/* FOOTER */
+footer{
+    background:var(--secondary);
+    color:white;
+    text-align:center;
+    padding:20px;
+    margin-top:30px;
+}
+
+/* RESPONSIVE DESIGN */
+@media(max-width:768px){
+
+    header{
+        padding:15px;
+    }
+
+    nav ul{
+        flex-direction:column;
+        align-items:center;
+    }
+
+    .about{
+        flex-direction:column;
+        text-align:center;
+    }
+
+    .about img{
+        width:180px;
+    }
+
+    main{
+        width:95%;
+    }
+}
+
+@media(max-width:480px){
+
+    body{
+        font-size:15px;
+    }
+
+    h1{
+        font-size:28px;
+    }
+
+    h2{
+        font-size:22px;
+    }
+
+    nav ul li{
+        margin:5px;
+    }
+
+    button{
+        width:100%;
+    }
+}
